@@ -1,0 +1,5 @@
+{
+  "name": "Ladder Snake",
+  "description": "A classic snake game with a twist. Grow your snake to climb the ladder to the second floor and continue your adventure.",
+  "requestFramePermissions": []
+}
