@@ -3,6 +3,7 @@ import Gameboard from './components/Gameboard';
 import StartScreen from './components/StartScreen';
 import GameOverScreen from './components/GameOverScreen';
 import SettingsScreen from './components/SettingsScreen';
+import Footer from './components/Footer';
 import { type GameState, type GameSpeed, type Floor } from './types';
 import { trackEvent } from './analytics';
 
@@ -104,17 +105,19 @@ const App: React.FC = () => {
   };
 
   return (
-    <main className="bg-slate-900 text-white min-h-screen flex flex-col items-center justify-center font-mono p-4">
-      <div className="w-full max-w-4xl flex flex-col items-center">
-        <header className="mb-4 text-center">
-          <h1 className="text-5xl font-bold tracking-wider text-emerald-400">
-            Ladder Snake
-          </h1>
-          <p className="text-slate-400 mt-2">
-            Climb an endless tower of floors!
-          </p>
-        </header>
-        {renderContent()}
+    <main className="bg-slate-900 text-white min-h-screen flex flex-col items-center font-mono p-4">
+      <div className="flex-grow w-full flex flex-col items-center justify-center">
+        <div className="w-full max-w-4xl flex flex-col items-center">
+          <header className="mb-4 text-center">
+            <h1 className="text-5xl font-bold tracking-wider text-emerald-400">
+              Ladder Snake
+            </h1>
+            <p className="text-slate-400 mt-2">
+              Climb an endless tower of floors!
+            </p>
+          </header>
+          {renderContent()}
+        </div>
       </div>
       <SettingsScreen
         isOpen={isSettingsOpen}
@@ -124,6 +127,7 @@ const App: React.FC = () => {
         gameSpeed={gameSpeed}
         onGameSpeedChange={handleGameSpeedChange}
       />
+      <Footer />
     </main>
   );
 };
